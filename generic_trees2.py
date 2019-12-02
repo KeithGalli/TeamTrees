@@ -8,7 +8,7 @@ turtle.colormode(255)
 
 turt = turtle.Turtle()
 starty = turt.ycor()
-turt.speed(0)
+turt.speed(5)
 
 def create_forest(size):
   iterations = int(36/size)

@@ -1,54 +1,20 @@
 import turtle
 import random
 
-turt = turtle.Turtle()
-starty = turt.ycor()
+from base_tree import Tree
 
-def create_forest(size):
-  random.seed(100)
+random.seed(100)
+starty = 0
+
+def create_forest(size, turt):
   for i in range(10):
-    turt.penup()
-    turt.setx(i*100-400)
     size = random.random()*2.5
-    turt.sety(starty-(size-1.25)*20)
-    turt.pendown()
-    create_tree(turt, size)
+    x = i*100-400
+    y = starty + (size-1.25)*20
+    tree = Tree(turt, x=x, y=y, scale=size, speed=6)
+    tree.create_tree()
 
-
-def create_tree(turt, size):
-  draw_base(turt, size)
-  draw_leafs(turt, size)
-
-def draw_base(turt, size):
-  turt.color('brown')
-  turt.begin_fill()
-  turt.setheading(0)
-  turt.forward(10*size)
-  turt.right(90)
-  turt.forward(20*size)
-  turt.right(90)
-  turt.forward(10*size)
-  turt.right(90)
-  turt.forward(20*size)
-  turt.end_fill()
-
-def draw_leafs(turt, size, color='green', triangles=3):
-  turt.color(color)
-  for i in range(triangles):
-    draw_triangle(turt, size)
-    turt.sety(turt.ycor()+10*size)
-
-def draw_triangle(turt, size):
-  turt.begin_fill()
-  startx = turt.xcor()
-  starty = turt.ycor()
-  rightside_trunk = startx + 10*size
-  turt.goto(startx-20*size, starty)
-  turt.goto((startx+rightside_trunk)/2.0, starty + 40 * size)
-  turt.goto(rightside_trunk+20*size, starty)
-  turt.goto(startx, starty)
-  turt.end_fill()
-
-create_forest(5)
-
-turtle.done()
+if __name__ == '__main__':
+  turt = turtle.Turtle()
+  create_forest(5, turt)
+  turtle.done()

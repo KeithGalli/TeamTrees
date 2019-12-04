@@ -3,12 +3,13 @@ import random
 
 class Tree:
 
-  def __init__(self, x=0, y=0, scale=1):
+  def __init__(self, turt, x=0, y=0, scale=1, speed=3):
     self.scale = scale
     self.trunk_width = 10*scale # width in pixels (default is 10 pixels)
     self.trunk_height = 20*scale
 
-    self.turt = turtle.Turtle()
+    self.turt = turt
+    self.turt.speed(speed)
 
     # Move turtle into position
     self.turt.penup()
@@ -40,8 +41,8 @@ class Tree:
       self.turt.sety(self.turt.ycor() + height_increase)
 
   def draw_triangle(self):
-    branch_overhang = 20*self.scale # length branches overhang from trunk
-    triangle_height = 40*self.scale
+    branch_overhang = self.trunk_height # length branches overhang from trunk (setting it to the same value as our trunk height seemed to look good)
+    triangle_height = 2*self.trunk_height # A single triangle is 2 times as tall as the trunk
 
     self.turt.begin_fill()
 
@@ -59,6 +60,7 @@ class Tree:
     self.turt.end_fill()
 
 if __name__ == '__main__':
-  tree = Tree(scale=5)
+  turtle.speed(0)
+  tree = Tree(turtle, x=3, y=200, scale=5, speed=0)
   tree.create_tree()
   turtle.done()

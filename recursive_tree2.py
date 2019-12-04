@@ -1,6 +1,7 @@
 import turtle
 import random
 
+
 random.seed(46)
 
 BRANCH_COUNT = 7

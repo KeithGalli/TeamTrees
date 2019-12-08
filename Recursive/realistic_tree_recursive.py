@@ -1,9 +1,6 @@
 import turtle
 import random
 
-
-random.seed(46)
-
 BRANCH_COUNT = 7
 TURN_ANGLE = 10
 SHRINK_FACTOR = 0.8
@@ -33,10 +30,10 @@ def get_color(depth):
     return 'green'
 
 if __name__ == '__main__':
+  random.seed(46)
   turt = turtle.Turtle()
   turt.setheading(90)
   turt.speed(0)
-
   turtle.colormode(255)
   tree(100, BRANCH_COUNT)
   turtle.done()

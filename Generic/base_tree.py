@@ -2,7 +2,6 @@ import turtle
 import random
 
 class Tree:
-
   def __init__(self, turt, x=0, y=0, scale=1, speed=3):
     self.scale = scale
     self.trunk_width = 10*scale # width in pixels (default is 10 pixels)
@@ -16,7 +15,7 @@ class Tree:
     self.turt.goto(x,y)
     self.turt.pendown()
 
-  def create_tree(self):
+  def draw_tree(self):
     self.draw_trunk()
     self.draw_leafs()
 
@@ -61,6 +60,6 @@ class Tree:
 
 if __name__ == '__main__':
   turtle.speed(0)
-  tree = Tree(turtle, x=3, y=200, scale=5, speed=0)
-  tree.create_tree()
+  tree = Tree(turtle, x=3, y=200, scale=5, speed=4)
+  tree.draw_tree()
   turtle.done()

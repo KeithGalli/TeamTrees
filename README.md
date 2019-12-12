@@ -1,7 +1,7 @@
 # TeamTrees
 Visualizations of trees in Python created for the #TeamTrees movement to plant 20 million trees by 2020.
 
-<img src="tree_drawing.gif" width="600">
+<img src="tree_drawing.gif" width="500">
 
 YouTube Video for code in Generic folder: https://youtu.be/WG42fyCMsD0
 

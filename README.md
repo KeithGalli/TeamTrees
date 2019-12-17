@@ -5,7 +5,7 @@ Visualizations of trees in Python created for the #TeamTrees movement to plant 2
 
 YouTube Video for code in Generic folder: https://youtu.be/WG42fyCMsD0
 
-YouTube Video for code in Recursive folder: (Will be posted in a few days)
+YouTube Video for code in Recursive folder: https://youtu.be/VUYPWxTe4Nw
 
 ## Setup
 
